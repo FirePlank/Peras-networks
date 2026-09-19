@@ -8,7 +8,8 @@ Each network is attached to a release, both raw and zstd-compressed. Download th
 
 | Network | Engine versions | Architecture | Size |
 | ------- | --------------- | ------------ | ---- |
-| `peras-v3.nnue` | v3.0.0 and later | `(768x10hm + threats + pawn pairs -> 1024)x2 -> 8` | 78 MB |
+| `peras-v4.nnue` | v3.4.0 and later | `(768x16hm + threats + pawn pairs -> 1024)x2 -> (32 -> 32 -> 1) x 8` | 87 MB |
+| `peras-v3.nnue` | v3.0.0 to v3.3.0 | `(768x10hm + threats + pawn pairs -> 1024)x2 -> 8` | 78 MB |
 | `peras-v2.nnue` | v2.0.0 to v2.1.0  | `(768x10hm -> 1024)x2 -> 8` | 15 MB |
 
 The architectures are not interchangeable. The engine embeds the network at compile time and the file size is part of the type, so building against the wrong one fails to compile rather than playing badly.
@@ -18,7 +19,7 @@ The architectures are not interchangeable. The engine embeds the network at comp
 Save the network as `nets/peras.nnue` in the engine source root, or point `EVALFILE` at it:
 
 ```bash
-curl -sL https://github.com/FirePlank/Peras-networks/releases/download/peras-v3/peras-v3.nnue -o nets/peras.nnue
+curl -sL https://github.com/FirePlank/Peras-networks/releases/download/peras-v4/peras-v4.nnue -o nets/peras.nnue
 cargo build --release
 ```
 
